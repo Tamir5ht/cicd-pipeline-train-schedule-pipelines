@@ -1,9 +1,9 @@
 pipeline {
 
-    agent {
-        node {
-            label 'master'
-        }
+    agent any
+
+    triggers {
+        githubPush()
     }
 
     options {
