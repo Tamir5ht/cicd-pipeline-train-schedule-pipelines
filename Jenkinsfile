@@ -22,7 +22,6 @@ pipeline {
             steps {
                 sh """
                 echo "Building Artifact"
-		sleep 180
 		./gradlew build --no-daemon
                 """
 		 archiveArtifacts artifacts: 'dist/trainSchedule.zip', fingerprint: true
