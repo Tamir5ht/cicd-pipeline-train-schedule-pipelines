@@ -23,6 +23,7 @@ pipeline {
                 sh """
                 echo "Building Artifact"
 		./gradlew build --no-daemon
+		echo "done!!!"
                 """
 		 archiveArtifacts artifacts: 'dist/trainSchedule.zip', fingerprint: true
 
