@@ -15,15 +15,6 @@ pipeline {
 
     stages {
         
-        stage('Cleanup Workspace') {
-            steps {
-                cleanWs()
-                sh """
-                echo "Cleaned Up Workspace For Project"
-                """
-            }
-        }
-
         stage('Build Deploy Code') {
             when {
                 branch 'master'
