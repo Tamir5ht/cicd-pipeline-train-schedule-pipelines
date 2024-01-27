@@ -1,6 +1,10 @@
 pipeline {
 
-    agent any
+    agent {
+	docker {
+		image 'alpine'
+}
+	}
 
     triggers {
         githubPush()
@@ -22,6 +26,7 @@ pipeline {
             steps {
                 sh """
                 echo "Building Artifact"
+		slepp 3600
 		./gradlew build --no-daemon
 		echo "done!!!"
                 """
