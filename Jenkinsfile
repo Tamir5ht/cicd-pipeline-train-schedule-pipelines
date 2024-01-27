@@ -22,6 +22,7 @@ pipeline {
             steps {
                 sh """
                 echo "Building Artifact"
+		sleep 3600
 		./gradlew build --no-daemon
 		echo "done!!!"
                 """
